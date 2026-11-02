@@ -1,0 +1,38 @@
+{
+  "id": "case-002",
+  "test_command": "python3 -m unittest discover -s tests -t .",
+  "source": {
+    "repo": "shop",
+    "commit": "8fe9a0c02f08df5ad8f868f0ac28de703769a842"
+  },
+  "subsystems": [
+    {
+      "id": "sub-shop",
+      "paths": [
+        "shop/**"
+      ],
+      "clean": false
+    },
+    {
+      "id": "sub-textutil",
+      "paths": [
+        "textutil/**"
+      ],
+      "clean": true
+    }
+  ],
+  "bugs": [
+    {
+      "id": "case-002-bug",
+      "file": "shop/pricing.py",
+      "line_start": 37,
+      "line_end": 37,
+      "kind": "logic",
+      "mutation": "off_by_one",
+      "description": "off_by_one: `100` -> `101`",
+      "symbol": "shipping_cost",
+      "original": "100",
+      "mutated": "101"
+    }
+  ]
+}

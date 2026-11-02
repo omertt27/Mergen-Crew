@@ -1,0 +1,38 @@
+{
+  "id": "case-003",
+  "test_command": "python3 -m unittest discover -s tests -t .",
+  "source": {
+    "repo": "shop",
+    "commit": "8fe9a0c02f08df5ad8f868f0ac28de703769a842"
+  },
+  "subsystems": [
+    {
+      "id": "sub-shop",
+      "paths": [
+        "shop/**"
+      ],
+      "clean": false
+    },
+    {
+      "id": "sub-textutil",
+      "paths": [
+        "textutil/**"
+      ],
+      "clean": true
+    }
+  ],
+  "bugs": [
+    {
+      "id": "case-003-bug",
+      "file": "shop/pricing.py",
+      "line_start": 15,
+      "line_end": 15,
+      "kind": "missing_error_handling",
+      "mutation": "drop_guard",
+      "description": "drop_guard: `raise ValueError(\"price cannot be negative\")` -> `pass`",
+      "symbol": "unit_price",
+      "original": "raise ValueError(\"price cannot be negative\")",
+      "mutated": "pass"
+    }
+  ]
+}

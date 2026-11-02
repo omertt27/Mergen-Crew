@@ -1,0 +1,25 @@
+{
+  "id": "clean-001",
+  "test_command": "python3 -m unittest discover -s tests -t .",
+  "source": {
+    "repo": "shop",
+    "commit": "8fe9a0c02f08df5ad8f868f0ac28de703769a842"
+  },
+  "subsystems": [
+    {
+      "id": "sub-shop",
+      "paths": [
+        "shop/**"
+      ],
+      "clean": true
+    },
+    {
+      "id": "sub-textutil",
+      "paths": [
+        "textutil/**"
+      ],
+      "clean": true
+    }
+  ],
+  "bugs": []
+}

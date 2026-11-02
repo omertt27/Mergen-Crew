@@ -1,0 +1,38 @@
+{
+  "id": "case-001",
+  "test_command": "python3 -m unittest discover -s tests -t .",
+  "source": {
+    "repo": "shop",
+    "commit": "8fe9a0c02f08df5ad8f868f0ac28de703769a842"
+  },
+  "subsystems": [
+    {
+      "id": "sub-shop",
+      "paths": [
+        "shop/**"
+      ],
+      "clean": true
+    },
+    {
+      "id": "sub-textutil",
+      "paths": [
+        "textutil/**"
+      ],
+      "clean": false
+    }
+  ],
+  "bugs": [
+    {
+      "id": "case-001-bug",
+      "file": "textutil/format.py",
+      "line_start": 20,
+      "line_end": 20,
+      "kind": "missing_error_handling",
+      "mutation": "drop_guard",
+      "description": "drop_guard: `raise ValueError(\"per_page must be positive\")` -> `pass`",
+      "symbol": "page_count",
+      "original": "raise ValueError(\"per_page must be positive\")",
+      "mutated": "pass"
+    }
+  ]
+}

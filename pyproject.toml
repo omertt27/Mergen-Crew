@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mergen-crew"
+version = "0.1.0"
+description = "An AI engineering team that keeps long-term ownership of parts of a repository and proves what it finds."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+crew = "mergen_crew.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mergen_crew*"]
